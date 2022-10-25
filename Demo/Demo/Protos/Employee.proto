@@ -1,0 +1,22 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "Demo.Protos";
+service EmployeeService {
+    rpc GetAll(EmptyProto) returns(EmployeeProtos);
+    
+}
+message EmptyProto {}
+message EmployeeProto {
+    int32 Id = 1;
+    string MaNV = 2; 
+    string TenNV = 3;
+    string SoDienThoai = 4;
+    string Email = 5;
+    bool GioiTinh = 6;
+    string CanCuoc = 7;
+    google.protobuf.Timestamp NgayTao = 8;
+
+}
+message EmployeeProtos {
+    repeated EmployeeProto items = 1;
+}
